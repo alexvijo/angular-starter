@@ -37,7 +37,6 @@
       'components/version/version-directive.js',
       'components/version/interpolate-filter.js'
     ], function() {
-      // when all is done, execute bootstrap angular application
       angular.bootstrap(document, ['myApp']);
     });
   </script>
@@ -46,11 +45,11 @@
 </head>
 <body ng-cloak>
   <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+    <li><a ui-sref="#/view1">vista1</a></li>
+    <li><a ui-sref="#/view2">vista2</a></li>
   </ul>
 
-  <div ng-view></div>
+  <div ui-view></div>
 
   <div>Angular seed app: v<span app-version></span></div>
 

@@ -1,4 +1,5 @@
 /* app css stylesheet */
+@import 'bower_components/bootstrap-sass/dist/css/bootstrap.min.css';
 
 .menu {
   list-style: none;
