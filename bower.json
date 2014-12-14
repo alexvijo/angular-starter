@@ -12,6 +12,8 @@
     "angular-mocks": "~1.2.x",
     "html5-boilerplate": "~4.3.0",
     "angular-ui-router": "~0.2.13",
-    "bootstrap-sass": "~3.0.2"
+    "bootstrap-sass": "~3.0.2",
+    "sidr": "~1.2.1",
+    "fontawesome": "~4.2.0"
   }
 }

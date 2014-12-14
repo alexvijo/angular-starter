@@ -1,5 +1,6 @@
 /* app css stylesheet */
 @import 'bower_components/bootstrap-sass/dist/css/bootstrap.min.css';
+@import 'font-awesome';
 
 .menu {
   list-style: none;
