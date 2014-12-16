@@ -1,6 +1,7 @@
 /* app css stylesheet */
 @import 'bower_components/bootstrap-sass/dist/css/bootstrap.min.css';
 @import 'font-awesome';
+@import 'bower_components/sidr/stylesheets/jquery.sidr.dark.css';
 
 .menu {
   list-style: none;
