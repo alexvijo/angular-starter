@@ -1,7 +1,19 @@
 /* app css stylesheet */
 @import 'bower_components/bootstrap-sass/dist/css/bootstrap.min.css';
+@import 'bower_components/fontawesome/css/font-awesome.min.css';
 @import 'font-awesome';
 @import 'bower_components/sidr/stylesheets/jquery.sidr.dark.css';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+$color-theme: red;
+@color-theme: red;
+
+body{
+  font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a, a:hover{
+  color: @color-theme;
+}
 
 .menu {
   list-style: none;
