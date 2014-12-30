@@ -12,9 +12,9 @@
   <meta name="description" content="description">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="css/app.css">
+  <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">-->
+  <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">-->
+  <link rel="stylesheet" href="./build/css/app.min.css">
 
   <script src="bower_components/html5-boilerplate/js/vendor/jquery-1.10.2.min.js"></script>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -25,6 +25,8 @@
 
 <body>
   <div class="container">
+
+    <!--vertical menu mobile device-->
     <div class="">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".topnav-collapse">
         <i class="fa fa-angle-down"> MENU</i>
@@ -38,9 +40,10 @@
     
     <nav id="sidr" class="collapse navbar-collapse topnav-collapse">
       <ul class="nav navbar-nav navbar-right text-center">
-        <li><a ui-sref="view1">HOME</a></li>
-        <li><a ui-sref="view2">SOBRE NOSOTROS</a></li>
-        <li><a ui-sref="view2">DONDE ESTAMOS</a></li>
+        <li><a ui-sref="home">HOME</a></li>
+        <li><a ui-sref="about">SOBRE NOSOTROS</a></li>
+        <li><a ui-sref="where">DONDE ESTAMOS</a></li>
+        <li><a ui-sref="gallery">GALLERY</a></li>
       </ul>
     </nav>
 
@@ -67,19 +70,35 @@
   <!--<script src="bower_components/angular-route/angular-route.js"></script>-->
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="bower_components/bootstrap-sass/dist/js/bootstrap.js"></script>
-  <script src="scripts/app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="bower_components/sidr/jquery.sidr.min.js"></script>
+  <script src="bower_components/OwlCarousel/owl-carousel/owl.carousel.js"></script>
+
+  <script src="build/scripts/app.min.js"></script>
+
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
-  <script src="bower_components/sidr/jquery.sidr.min.js"></script>
+
   <script>
     $(document).ready(function() {
       $('#simple-menu').sidr({
           name: 'sidr-main',
           source: '#sidr'
-      });
+      });      
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+
+        $('.owl-carousel').owlCarousel({
+          center: true,
+          items:2,
+          loop:true,
+          margin:10,
+          responsive:{
+              600:{items:4}
+          }
+        });
     });
   </script>
 </body>
