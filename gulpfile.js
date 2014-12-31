@@ -5,42 +5,43 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	imagemin = require('gulp-imagemin'),
 	watch = require('gulp-watch'),
+    gutil = require('gulp-util');
 	del = require('del');
 
 var paths = {
-    scripts: './app/scripts/**/*.*',
-    images: './app/assets/images/**/*',
-    styles: './app/css/**/*.*'
+    scripts: './app/assets/scripts/**/*.*',
+    images: './app/assets/images/**/*.*',
+    styles: './app/assets/css/**/*.*'
 };
 
 
 gulp.task('del', function(){
-	del(['assets'], function(err){
-		console.log('deleted assets!');
-	})
+    del(['build'], function(err){
+        console.log('deleted build folder!');
+    });
 });
 
 gulp.task('minify-css', ['del'],  function() {
     return gulp
   	    .src(paths.styles)
-        .pipe(minifyCSS( {keepBreaks:true} ))
+        .pipe(minifyCSS())
         .pipe(rename({suffix:'.min'}))
-        .pipe(gulp.dest('./app/css/'))
+        .pipe(gulp.dest('./app/build/css/'))
 });
 
 gulp.task('scripts', ['del'], function() {
     return gulp
 	    .src(paths.scripts)
-	    .pipe(uglify())
+	    //.pipe(uglify()).pipe(uglify().on('error', gutil.log))
 	    .pipe(rename({suffix:'.min'}))
-	    .pipe(gulp.dest('./app/scripts/'))
+	    .pipe(gulp.dest('./app/build/scripts/'))
 });
 
 gulp.task('images', ['del'], function() {
     return gulp
   	    .src(paths.images)
         .pipe(imagemin({optimizationLevel: 5}))
-        .pipe(gulp.dest('assets/images'));
+        .pipe(gulp.dest('.app/build/images/'));
 });
 
 // Rerun the task when a file changes
@@ -48,9 +49,7 @@ gulp.task('watch', function() {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['minify-css']);
     gulp.watch(paths.images, ['images']);
+    console.log('I am watching you...');
 });
 
-gulp.task('default', ['del', 'minify-css','scripts', 'watch']);
-
-
-
+gulp.task('default', ['minify-css','scripts', 'images', 'watch']);
