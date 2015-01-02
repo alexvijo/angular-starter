@@ -21,26 +21,25 @@ angular.module('myApp', [
     };  
 })
 
-.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
-	  
+.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function($stateProvider, $urlRouterProvider, $locationProvider) {
+    
+    // enable html5Mode for pushstate ('#'-less URLs)
+    //$locationProvider.html5Mode(true);
+    //$locationProvider.hashPrefix('!');  
+
+	$urlRouterProvider.otherwise('/home');  
     $stateProvider
-	    .state('home', {
-	      url: "/home",
-	      templateUrl: "templates/home.html"
+	    .state('home',    { url: "/home",     templateUrl: "templates/home.html" })
+	    .state('about',   { url: "/about",    templateUrl: "templates/about.html" })
+	    .state('where',   { url: "/where",    templateUrl: "templates/where.html" })	
+	    .state('products',   { url: "/products",    templateUrl: "templates/products.html" })	
+	    .state('products.first', { url: "/first", templateUrl: "templates/about.html",
+	    	controller: function ($stateParams) {
+	    		console.log('products');
+            //expect($stateParams).toBe({contactId: "42"});
+        	} 
 	    })
-	    .state('about', {
-	      url: "/about",
-	      templateUrl: "templates/about.html"
-	    })
-	    .state('where', {
-	      url: "/where",
-	      templateUrl: "templates/where.html"
-	    })	
-	    .state('gallery', {
-	      url: "/gallery",
-	      templateUrl: "templates/gallery.html",
-	      image: 'http://lorempixel.com/400/200/sports'
-	    });	        	    
-	//$locationProvider.html5Mode(true);	
+
+	    .state('gallery', { url: "/gallery",  templateUrl: "templates/gallery.html", image: 'http://lorempixel.com/400/200/sports' });
+
 }]);
