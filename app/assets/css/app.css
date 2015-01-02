@@ -10,14 +10,22 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
 
-$color-theme: #ccc;
 
 body{
   font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-a, a:hover{
-  color: $color-theme;
+
+a{ 
+  color: #333;
+  text-decoration: none;
+}
+a:hover, a:selected{
+    color: green;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #fff;
 }
 /*MENU*/
 .menu {
