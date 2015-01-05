@@ -18,7 +18,7 @@ var paths = {
 
 gulp.task('styles', ['del'], function() {
     return gulp
-        .src(paths.styles)
+        .src([ paths.styles, './app/bower_components/bootstrap-sass-only/scss/bootstrap.scss'] )
         .pipe(sass({onError: function(e) { console.log(e); } }))
         .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8"))
         .pipe(minifyCSS())
@@ -27,14 +27,6 @@ gulp.task('styles', ['del'], function() {
         //.pipe(refresh(lrserver));
 });
 
-/*gulp.task('minify-css', ['del'],  function() {
-    return gulp
-        .src(paths.styles)
-        .pipe(minifyCSS())
-        .pipe(rename({suffix:'.min'}))
-        .pipe(gulp.dest('./app/build/css/'))
-});
-*/
 gulp.task('del', function(){
     del(['build'], function(err){
         console.log('deleted build folder!');
@@ -56,7 +48,6 @@ gulp.task('images', ['del'], function() {
         .pipe(gulp.dest('.app/build/images/'));
 });
 
-// Rerun the task when a file changes
 gulp.task('watch', function() {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['styles']);
@@ -65,3 +56,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['styles','scripts', 'images', 'watch']);
+
+
+
