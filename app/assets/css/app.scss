@@ -1,32 +1,45 @@
-/* app css stylesheet */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
+
+/*styles*/
 @import '../../bower_components/html5-boilerplate/css/normalize.css';
-@import '../../bower_components/html5-boilerplate/css/main.css';
+/*@import '../../bower_components/html5-boilerplate/css/main.css';*/
 @import '../../bower_components/bootstrap-sass-only/scss/bootstrap.scss';
 @import '../../bower_components/fontawesome/css/font-awesome.min.css';
-@import '../../bower_components/sidr/stylesheets/jquery.sidr.dark.css';
+@import '../../bower_components/sidr/stylesheets/jquery.sidr.light.css';
 @import '../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css';
 @import '../../bower_components/OwlCarousel/owl-carousel/owl.theme.css';
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
 
 
 body{
-  font-family: "Open Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
-  .container{
-    border: 1px solid #999;
+  font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #666;
+  h1{
+    font-family: 'Open Sans', Arial;
+    font-weight: 300;
+  } 
+  a{
+    color: #666;
+
   }
-}
+    a.active{
+      color: red;
+    }
+    a.sidr-class-active{
+      color:blue;
+    }
+  .nav>li>a:focus, .nav>li>a:hover {
+   text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: #FF28B4;
+  }
+  .sidr ul li.active>a, .sidr ul li.active>span, .sidr ul li.sidr-class-active>a, .sidr ul li.sidr-class-active>span, .sidr ul li:hover>a, .sidr ul li:hover>span {
+    color: #FF28B4;
+  }
 
-
-a{ 
-  color: #333;
-  text-decoration: none;
-}
-a:hover, a:selected{
-    color: green;
-}
-.nav>li>a:focus, .nav>li>a:hover {
-    text-decoration: none;
-    background-color: #fff;
 }
 /*MENU*/
 .menu {
@@ -54,8 +67,4 @@ a:hover, a:selected{
   padding: 0;
 }
 
-/*FONTS*/
-h1{
-  font-family: 'Open Sans', Arial;
-  font-weight: 300;
-}
+

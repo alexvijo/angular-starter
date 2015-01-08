@@ -38,7 +38,7 @@ angular.module('myApp', [
 		    })*/
 		    .state('gallery', { url: "/gallery",  templateUrl: "templates/gallery.html", image: 'http://lorempixel.com/400/200/sports' });
 		$urlRouterProvider.otherwise('/home');
-}])
+}]);
 
 /*.controller('productController', ["$scope", "$routeParams", function( $scope, $routeParams) {
 	    		$scope.param = "default";
