@@ -44,11 +44,11 @@ gulp.task('scripts', ['del'], function() {
         .pipe(notify({ message: 'Scripts task complete' }));
 });
 
-gulp.task('images', ['del'], function() {
+gulp.task('images', function() {
     return gulp
   	    .src(paths.images)
         .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('.app/build/images/'))
+        .pipe(gulp.dest('./app/build/images/'))
         .pipe(notify({ message: 'Images task complete' }));
 });
 
