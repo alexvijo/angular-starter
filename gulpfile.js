@@ -17,7 +17,7 @@ var paths = {
     scripts: './app/assets/scripts/**/*.*',
     images: './app/assets/images/**/*.*',
     styles: './app/assets/css/**/*.scss',
-    bootstrap: './app/bower_components/bootstrap-sass-only/scss/bootstrap.scss'
+    bootstrap: './app/bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss'
 };
 
 gulp.task('styles', ['del'], function() {

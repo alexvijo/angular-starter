@@ -1,24 +1,28 @@
+@import url("http://fonts.googleapis.com/css?family=Raleway");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 
 
 @import "../../bower_components/html5-boilerplate/css/normalize.css";
 /*@import '../../bower_components/html5-boilerplate/css/main.css';*/
-@import "../../bower_components/bootstrap-sass-only/scss/bootstrap.scss";
 @import "../../bower_components/fontawesome/css/font-awesome.min.css";
-@import "../../bower_components/sidr/stylesheets/jquery.sidr.light.css";
+@import "../../bower_components/sidr/stylesheets/jquery.sidr.dark.css";
 @import "../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css";
 @import "../../bower_components/OwlCarousel/owl-carousel/owl.theme.css";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
+$grey-color: #333;
 
 
 body{
-  font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: #666;
+    font-family:'Raleway', 'Open Sans', "Helvetica Neue" , Helvetica , Arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: $grey-color;
+    font-size: 15px;
+    line-height: 26px;
+
   h1{
-    font-family: 'Open Sans', Arial;
     font-weight: 300;
   } 
   a{
@@ -40,7 +44,46 @@ body{
     color: #FF28B4;
   }
 
+  /*HEADER*/
+  .header {
+    margin: 30px 0 0 0;
+
+    .thelogo {
+      float: left;
+      width: 150px;
+      margin: 0;
+      .logo {
+        background-color: #000;
+        width: 109px;
+        color: #FFF;
+        text-align: center;
+        padding: 3px 4px;
+      }
+    }
+    .opensider {
+      float: left;
+      width: 20px;
+      margin: 2px 0 0;
+    }
+    nav#sidr {
+      margin: 30px 0 0 0;
+    }
+    .navbar-toggle {
+      margin: 0; 
+      border: 1px solid $grey-color;
+    }  
+  }
+
+  /*FOOTER*/
+  .footer {
+    background-color: #000;
+    color: #FFF;
+  }
+
 }
+
+
+
 /*MENU*/
 .menu {
   list-style: none;
@@ -67,4 +110,5 @@ body{
   padding: 0;
 }
 
+.angular-google-map-container { height: 400px; }
 
