@@ -1,10 +1,10 @@
-@import url("http://fonts.googleapis.com/css?family=Raleway");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
+@import url("http://fonts.googleapis.com/css?family=Raleway:200");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 
 
 @import "../../bower_components/html5-boilerplate/css/normalize.css";
-/*@import '../../bower_components/html5-boilerplate/css/main.css';*/
+@import "../../bower_components/html5-boilerplate/css/main.css";
 @import "../../bower_components/fontawesome/css/font-awesome.min.css";
 @import "../../bower_components/sidr/stylesheets/jquery.sidr.dark.css";
 @import "../../bower_components/OwlCarousel/owl-carousel/owl.carousel.css";
@@ -12,19 +12,26 @@
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 $grey-color: #333;
+$main-color: orange;
 
 
 body{
-    font-family:'Raleway', 'Open Sans', "Helvetica Neue" , Helvetica , Arial, sans-serif;
-    font-weight: 300;
+    font-family: 'Open Sans', "Helvetica Neue" , Helvetica , Arial, sans-serif;
+    font-weight: 400;
     font-style: normal;
     color: $grey-color;
     font-size: 15px;
     line-height: 26px;
+    border-top: 3px solid $main-color;
 
-  h1{
-    font-weight: 300;
+  h1, h2, h3{
+    font-family: 'Raleway', 'Open Sans', "Helvetica Neue" , Helvetica , Arial, sans-serif;
+    font-weight: 200;
+    color: $main-color;
   } 
+  p{
+    font-family: 'Open Sans', "Helvetica Neue" , Helvetica , Arial, sans-serif;
+  }
   a{
     color: #666;
 
@@ -40,8 +47,20 @@ body{
     background-color: rgba(255, 255, 255, 0);
     color: #FF28B4;
   }
-  .sidr ul li.active>a, .sidr ul li.active>span, .sidr ul li.sidr-class-active>a, .sidr ul li.sidr-class-active>span, .sidr ul li:hover>a, .sidr ul li:hover>span {
-    color: #FF28B4;
+
+  /*SIDER*/
+  #sidr, .sidr{
+    ul{
+      li{
+        &.active>a, &.active>span, &.sidr-class-active>a, &.sidr-class-active>span, &:hover>a, &:hover>span {
+          color: orange; // #FF28B4;
+        }
+
+        a{
+            text-align: center;
+        }
+      }
+    }
   }
 
   /*HEADER*/
@@ -53,11 +72,12 @@ body{
       width: 150px;
       margin: 0;
       .logo {
-        background-color: #000;
+        background-color: #FFF;
         width: 109px;
-        color: #FFF;
+        color: $main-color;
         text-align: center;
         padding: 3px 4px;
+        border: 1px solid $main-color;
       }
     }
     .opensider {
@@ -78,6 +98,7 @@ body{
   .footer {
     background-color: #000;
     color: #FFF;
+    margin: 20px 0 0 0;
   }
 
 }
